@@ -18,4 +18,13 @@ const uiRoutes = require('./server/routes/uiRoutes');
     app.locals.PORT = PORT;
     console.log(`App is running at http://localhost:${PORT}`);
     app.listen(PORT)
+
+    process.on('SIGINT', () => {
+        console.log('Received SIGINT. Press Control-D to exit.');
+        process.exit(1)
+    });
+    process.on('SIGTERM', () => {
+        console.log('Received SIGINT. Press Control-D to exit.');
+        process.exit(1)
+    });
 })();
