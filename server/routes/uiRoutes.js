@@ -1,3 +1,5 @@
+const db = require('../db');
+
 const globalLocals = {
 
 }
@@ -9,11 +11,15 @@ const globalPartials = {
 
 const routes = (app) => {
 
-    app.get('/', (req, res) => {
+    app.get('/', async (req, res) => {
+        const data = await db.getNow()
+        console.log(data);
+
         res.render('static/index.html', {
             locals: {
                 ...globalLocals,
-                title: 'Home'
+                title: 'Home',
+                data: await db.getPosts()
             },
             partials: {
                 ...globalPartials
@@ -21,7 +27,7 @@ const routes = (app) => {
         })
     })
 
-    app.get('/about', (req, res) => {
+    app.get('/about', async (req, res) => {
         res.render('static/about.html', {
             locals: {
                 ...globalLocals,
@@ -33,7 +39,7 @@ const routes = (app) => {
         })
     })
 
-    app.get('/projects', (req, res) => {
+    app.get('/projects', async (req, res) => {
         res.render('static/projects.html', {
             locals: {
                 ...globalLocals,
@@ -45,7 +51,7 @@ const routes = (app) => {
         })
     })
 
-    app.get('/project/:id', (req, res) => {
+    app.get('/project/:id', async (req, res) => {
         const id = req.params.id;
 
 

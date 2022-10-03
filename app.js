@@ -4,6 +4,8 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const uiRoutes = require('./server/routes/uiRoutes');
+const apiRoutes = require('./server/routes/apiRoutes');
+const db = require('./server/db');
 
 (async () => {
     app.engine('html', es6Renderer);
@@ -13,10 +15,15 @@ const uiRoutes = require('./server/routes/uiRoutes');
     app.use('/static', express.static('static')); //Main Dir, where all the CSS JS files etc live
     app.use('/node_modules', express.static('node_modules')); //node_modules
 
+    await db.setup();
+
     uiRoutes(app);
+    apiRoutes(app);
 
     app.locals.PORT = PORT;
-    console.log(`App is running at http://localhost:${PORT}`);
+    console.log(`<=========================================>`);
+    console.log(`> App is running at http://localhost:${PORT} <`);
+    console.log(`<=========================================>`);
     app.listen(PORT)
 
     process.on('SIGINT', () => {

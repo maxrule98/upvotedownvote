@@ -6,6 +6,28 @@ ${head}
     <main class="flex flex-col gap-5 px-5 my-5">
         <section class="max-w-xl bg-gray-300">
             <h1>${title}</h1>
+            <p>${JSON.stringify(data)}</p>
+
+            <div class="flex flex-row">
+
+                ${data.map(post => `
+                    <article class="flex-1">
+                        <small>${post.id}</small>
+                        <h1>${post.title}</h1>
+                        <div class="flex flex-col items-center justify-center max-w-max">
+                            <label for="upvote">
+                                <input type="checkbox" name="upvote" id="vote" class=""
+                                    data-id="${post.id}" data-val="${post.upvotes}" data-vote-type="upvote">
+                            </label>
+                            <p id="counter" data-counter="${post.id}">${post.upvotes - post.downvotes}</p>
+                            <label for="downvote">
+                                <input type="checkbox" name="downvote" id="vote" class=""
+                                    data-id="${post.id}" data-val="${post.downvotes}" data-vote-type="downvote">
+                            </label>
+                        </div>
+                        `).join("")}
+                    </article>
+                </div>
         </section>
     </main>
 
@@ -13,6 +35,6 @@ ${head}
 
     </footer>
     
-
+    <script src="static/js/upvoteDownvote.js"></script>
 </body>
 </html>
