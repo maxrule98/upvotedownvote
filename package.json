@@ -20,6 +20,7 @@
     "tailwindcss": "^3.0.23"
   },
   "dependencies": {
+    "dotenv": "^16.0.3",
     "express": "^4.17.3",
     "express-es6-template-engine": "^2.2.3",
     "nodemon": "^2.0.19",
