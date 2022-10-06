@@ -7,8 +7,8 @@ npm i
 npm run dev
 
 create .env file containing the following:
-DB_NAME="Your Database Name"
-DB_USER="Your Database User Name"
+- DB_NAME="Your Database Name"
+- DB_USER="Your Database User Name"
 
 ### TODO
 
