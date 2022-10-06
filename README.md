@@ -1,16 +1,16 @@
 ## README
 
-**Install and run**
-
-npm i
-
-npm run dev
+###**Install and run**
 
 create .env file containing the following:
 - DB_NAME="Your Database Name"
 - DB_USER="Your Database User Name"
 
-### TODO
+npm i
+
+npm run dev
+
+### **TODO**
 
 - Add post functionality (with markdown support??)
 - Individual post page
