@@ -1,6 +1,6 @@
 ## README
 
-###**Install and run**
+### **Install and run**
 
 create .env file containing the following:
 - DB_NAME="Your Database Name"
