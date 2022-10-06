@@ -6,7 +6,7 @@ npm i
 
 npm run dev
 
-create .env file with DB_NAME="<Your Database Name>" and DB_USER="<Your Database User Name>"
+create .env file with DB_NAME="Your Database Name" and DB_USER="Your Database User Name"
 
 ### TODO
 
