@@ -1,21 +1,21 @@
-#vote[data-vote-type="upvote"] {
+#vote[data-vote-btn="upvote"] {
     cursor: pointer;
     appearance: none;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     background-image: url('../assets/svg/ic-keyboard-arrow-up-24px.svg');
 }
-#vote[data-vote-type="upvote"]:checked {
+#vote[data-vote-btn="upvote"]:checked {
     background-image: url("../assets/svg/ic-keyboard-arrow-up-24px-checked.svg");
 }
 
-#vote[data-vote-type="downvote"] {
+#vote[data-vote-btn="downvote"] {
     cursor: pointer;
     appearance: none;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     background-image: url('../assets/svg/ic-keyboard-arrow-down-24px.svg');
 }
-#vote[data-vote-type="downvote"]:checked {
+#vote[data-vote-btn="downvote"]:checked {
     background-image: url("../assets/svg/ic-keyboard-arrow-down-24px-checked.svg");
 }

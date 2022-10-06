@@ -33,7 +33,6 @@ const routes = (app) => {
 
         console.log("Remove Downvote: " + id);
         let request = await db.removeDownvote(id);
-
         res.json(request);
     });
 

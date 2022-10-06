@@ -15,12 +15,12 @@ const getNow = async () => {
 
 const addPost = async () => {
     try {
-        const response = await pool.query('INSERT INTO posts(id, title, content, upvotes, downvotes) VALUES ($1, $2, $3, $4, $5)',[
-            1,
-            "Hello world Newest",
-            "hello world Newest, This is a new post!",
-            0,
-            0,
+        const response = await pool.query('INSERT INTO posts(id, date, title, content, upvotes, downvotes) VALUES ($1, NOW(), $2, $3, $4, $5)',[
+            2,
+            "Test post 2",
+            "Testing testing testing testing",
+            1069,
+            69,
         ]);
         console.log("post added");
         // return response.rows[0];
@@ -129,7 +129,7 @@ const removeDownvote = async (id, val) => {
 
 const getPosts = async () => {
     try {
-        const response = await pool.query('SELECT * FROM posts;');
+        const response = await pool.query('SELECT * FROM posts ORDER BY date DESC');
         // console.log(response.rows);
         return response.rows;
         
@@ -152,6 +152,7 @@ const setup = async () => {
         console.log("Create table posts");
         await pool.query(`CREATE TABLE IF NOT EXISTS posts (
             id INT NOT NULL ,
+            date timestamp ,
             title VARCHAR(255) NULL ,
             content TEXT NULL ,
             upvotes INT,
