@@ -2,9 +2,13 @@
 
 ### **Install and run**
 
+Install Postgres
+Create a database with the same name as in the .env file
+
 create .env file containing the following:
 - DB_NAME="Your Database Name"
 - DB_USER="Your Database User Name"
+- TOKEN_KEY='Super Secret Password'
 
 npm i
 
