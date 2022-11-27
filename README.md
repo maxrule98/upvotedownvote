@@ -2,8 +2,7 @@
 
 ### **Install and run**
 
-Install Postgres
-Create a database with the same name as in the .env file
+Install Postgres and create a database with the same name as in the .env file
 
 create .env file containing the following:
 - DB_NAME="Your Database Name"
