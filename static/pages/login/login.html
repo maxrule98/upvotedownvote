@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+${head}
+<body class="flex flx-row h-screen">
+    <main class="flex flex-col gap-5 p-5 flex-1">
+        <section class="flex flex-col gap-5 w-full max-w-xl mx-auto">
+            <form id="loginForm" action="/api/v1/login" method="POST" class="flex flex-col gap-2 w-full bg-gray-200 p-2">
+                <h3 class="text-xl">Login</h3>
+                <label for="" class="flex flex-col">
+                    Email
+                    <input type="email" name="email" id="loginEmail" placeholder="example@example.com" class="p-2" required>
+                </label>
+                <label for="" class="flex flex-col">
+                    Password
+                    <input type="password" name="pass" id="loginPass" placeholder="********" class="p-2" required>
+                </label>
+                <input type="submit" id="loginSubmit" value="Login" class="bg-red-500 p-2 px-5 text-white font-semibold max-w-max cursor-pointer">
+                <p id="errorMessage" class="bg-red-300 text-red-900 px-2"></p>
+                <p>
+                    Don't have an account? <a href="/register" id="registerBtn" class="cursor-pointer underline">Register Here</a>
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+
+    </footer>
+    
+    <script src="/static/pages/login/login.js"></script>
+</body>
+</html>

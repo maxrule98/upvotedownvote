@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+${head}
+<body class="">
+    <main class="flex flex-col gap-5 px-5 my-5">
+        <section class="flex flex-col gap-5 w-full max-w-xl mx-auto">
+            <form id="registerForm" action="/api/v1/register" method="POST" class="flex flex-col gap-2 w-full bg-gray-200 p-2">
+                <h3 class="text-xl">Register</h3>
+                <div class="flex flex-row gap-2">
+                    <label for="" class="flex flex-col flex-1">
+                        First Name
+                        <input type="text" name="firstName" id="registerFirstName" placeholder="John" class="p-2">
+                    </label>
+                    <label for="" class="flex flex-col flex-1">
+                        Last Name
+                        <input type="text" name="lastName" id="registerLastName" placeholder="Smith" class="p-2">
+                    </label>
+                </div>
+                <label for="" class="flex flex-col">
+                    Email
+                    <input type="email" name="email" id="registerEmail" placeholder="JohnSmith@example.com" class="p-2">
+                </label>
+                <label for="" class="flex flex-col">
+                    Password
+                    <input type="password" name="pass1" id="registerPass1" placeholder="********" class="p-2">
+                </label>
+                <label for="" class="flex flex-col">
+                    Repeat Password
+                    <input type="password" name="pass2" id="registerPass2" placeholder="********" class="p-2">
+                </label>
+                <input type="submit" value="Register" id="registerSubmit" class="bg-red-500 p-2 px-5 text-white font-semibold max-w-max cursor-pointer">
+                <p id="errorMessage" class="bg-red-300 text-red-900 px-2"></p>
+                <p>
+                    Already have an account? <a href="/login" id="loginBtn" class="cursor-pointer underline">Login Here</a>
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+
+    </footer>
+    
+    <script src="/static/pages/login/register.js"></script>
+</body>
+</html>
